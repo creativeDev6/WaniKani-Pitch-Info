@@ -3,7 +3,7 @@
 // @match        https://www.wanikani.com/*
 // @match        https://preview.wanikani.com/*
 // @namespace    https://greasyfork.org/en/scripts/31070-wanikani-pitch-info
-// @version      0.82
+// @version      0.83
 // @description  Displays pitch accent diagrams on WaniKani vocab and session pages.
 // @author       Invertex
 // @supportURL   http://invertex.xyz
@@ -129,7 +129,7 @@ var wkof = null;
         console.log("didAnswerQuestion");
         // didAnswerQuestion will be triggered whenever the user answers a question
         if (wkof.settings.wanikani_pitch_info?.display_pitch_beside_question && ev.detail.questionType == 'reading' && ev.detail.results.action == 'pass') {
-          let divQuestion = document.querySelector("#turbo-body > div.quiz > div > div.character-header.character-header--vocabulary > div > div.character-header__characters");
+          let divQuestion = document.querySelector("#turbo-body > div.quiz > div > div.character-header.character-header--vocabulary > div > div.qa-character-wrapper > div.character-header__characters");
           if (!divQuestion) return;
 
           // Check if pitch info has already been added to avoid duplicates
